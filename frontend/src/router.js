@@ -5,11 +5,11 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import OrderManager from "./components/listers/OrderCards"
-import OrderDetail from "./components/listers/OrderDetail"
+import OrderOrderManager from "./components/listers/OrderOrderCards"
+import OrderOrderDetail from "./components/listers/OrderOrderDetail"
 
-import InventoryManager from "./components/listers/InventoryCards"
-import InventoryDetail from "./components/listers/InventoryDetail"
+import InventoryInventoryManager from "./components/listers/InventoryInventoryCards"
+import InventoryInventoryDetail from "./components/listers/InventoryInventoryDetail"
 
 
 export default new Router({
@@ -17,25 +17,25 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/orders',
-                name: 'OrderManager',
-                component: OrderManager
+                path: '/orders/orders',
+                name: 'OrderOrderManager',
+                component: OrderOrderManager
             },
             {
-                path: '/orders/:id',
-                name: 'OrderDetail',
-                component: OrderDetail
+                path: '/orders/orders/:id',
+                name: 'OrderOrderDetail',
+                component: OrderOrderDetail
             },
 
             {
-                path: '/inventories',
-                name: 'InventoryManager',
-                component: InventoryManager
+                path: '/inventories/inventories',
+                name: 'InventoryInventoryManager',
+                component: InventoryInventoryManager
             },
             {
-                path: '/inventories/:id',
-                name: 'InventoryDetail',
-                component: InventoryDetail
+                path: '/inventories/inventories/:id',
+                name: 'InventoryInventoryDetail',
+                component: InventoryInventoryDetail
             },
 
 

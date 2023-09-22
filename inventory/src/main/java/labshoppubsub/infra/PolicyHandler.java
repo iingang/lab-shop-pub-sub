@@ -12,6 +12,7 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
+//<<< Clean Arch / Inbound Adaptor
 @Service
 @Transactional
 public class PolicyHandler {
@@ -37,6 +38,5 @@ public class PolicyHandler {
         // Sample Logic //
         Inventory.decreaseStock(event);
     }
-    // keep
-
 }
+//>>> Clean Arch / Inbound Adaptor

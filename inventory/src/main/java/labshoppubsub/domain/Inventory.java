@@ -1,46 +1,37 @@
 package labshoppubsub.domain;
 
-import labshoppubsub.InventoryApplication;
-import javax.persistence.*;
-import java.util.List;
-import lombok.Data;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.*;
+import labshoppubsub.InventoryApplication;
+import lombok.Data;
 
 @Entity
-@Table(name="Inventory_table")
+@Table(name = "Inventory_table")
 @Data
+//<<< DDD / Aggregate Root
+public class Inventory {
 
-public class Inventory  {
-
-    
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    
-    
-    
-    
+
     private Long stock;
 
     @PostPersist
-    public void onPostPersist(){
-    }
+    public void onPostPersist() {}
 
-    public static InventoryRepository repository(){
-        InventoryRepository inventoryRepository = InventoryApplication.applicationContext.getBean(InventoryRepository.class);
+    public static InventoryRepository repository() {
+        InventoryRepository inventoryRepository = InventoryApplication.applicationContext.getBean(
+            InventoryRepository.class
+        );
         return inventoryRepository;
     }
 
-
-
-
-    public static void decreaseStock(OrderPlaced orderPlaced){
+    //<<< Clean Arch / Port Method
+    public static void decreaseStock(OrderPlaced orderPlaced) {
+        //implement business logic here:
 
         /** Example 1:  new item 
         Inventory inventory = new Inventory();
@@ -59,8 +50,8 @@ public class Inventory  {
          });
         */
 
-        
     }
-
+    //>>> Clean Arch / Port Method
 
 }
+//>>> DDD / Aggregate Root
